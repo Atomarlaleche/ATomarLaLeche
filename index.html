@@ -11,45 +11,70 @@
       height: 100%;
       width: 100%;
       overflow: hidden;
-      font-family: 'Courier New', Courier, monospace;
-      background-color: #000;
+      font-family: 'Arial', sans-serif;
+      background-color: black;
+      color: white;
     }
-    .bg {
+    .container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 2;
+    }
+    h1 {
+      font-size: 4rem;
+      color: #00ffcc;
+      text-shadow: 0 0 20px #00ffcc;
+      margin-bottom: 20px;
+    }
+    .bg-video {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: url('https://media.tenor.com/7jxT3AjG-TcAAAAC/alistar-league-of-legends.gif') no-repeat center center;
-      background-size: cover;
-      z-index: -1;
+      object-fit: cover;
+      z-index: 1;
     }
-    h1 {
-      color: #ffffff;
-      text-shadow: 0 0 15px #00ffcc;
-      font-size: 4rem;
-      text-align: center;
-      position: relative;
-      top: 40vh;
+    .btn {
+      padding: 15px 30px;
+      background-color: #00ffcc;
+      color: black;
+      font-weight: bold;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.2s ease;
     }
-    audio {
-      display: none;
+    .btn:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <div class="bg"></div>
-  <h1>¡A TOMAR LA LECHE!</h1>
-  <audio id="bgm" autoplay loop>
+  <div class="container">
+    <h1>¡A TOMAR LA LECHE!</h1>
+    <button class="btn" onclick="enableAudio()">Activar Audio</button>
+  </div>
+
+  <img class="bg-video" src="https://media.tenor.com/7jxT3AjG-TcAAAAC/alistar-league-of-legends.gif" alt="Alistar Bailando">
+
+  <audio id="bgm" loop>
     <source src="https://dl.vgmdownloads.com/soundtracks/torero.mp3" type="audio/mp3">
     Tu navegador no soporta audio HTML5.
   </audio>
+
   <script>
-    window.onload = () => {
+    function enableAudio() {
       const audio = document.getElementById('bgm');
       audio.volume = 0.5;
+      audio.play();
     }
   </script>
 </body>
 </html>
-
