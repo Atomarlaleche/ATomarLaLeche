@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A TOMAR LA LECHE</title>
+  <meta name="description" content="Fuiste toreado">
+  <title>A TOMAR LA LECHE 🥛</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
       overflow: hidden;
       font-family: 'Arial', sans-serif;
       background-color: black;
       color: white;
     }
-    .container {
+    .wrapper {
       position: relative;
-      height: 100%;
-      width: 100%;
+      width: 100vw;
+      height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       z-index: 2;
     }
     h1 {
@@ -30,15 +28,7 @@
       color: #00ffcc;
       text-shadow: 0 0 20px #00ffcc;
       margin-bottom: 20px;
-    }
-    .bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: 1;
+      text-align: center;
     }
     .btn {
       padding: 15px 30px;
@@ -54,15 +44,24 @@
     .btn:hover {
       transform: scale(1.05);
     }
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrapper">
     <h1>¡A TOMAR LA LECHE!</h1>
     <button class="btn" onclick="enableAudio()">Activar Audio</button>
   </div>
 
-  <img class="bg-video" src="https://media.tenor.com/7jxT3AjG-TcAAAAC/alistar-league-of-legends.gif" alt="Alistar Bailando">
+  <img class="bg" src="https://media.tenor.com/7jxT3AjG-TcAAAAC/alistar-league-of-legends.gif" alt="Alistar bailando">
 
   <audio id="bgm" loop>
     <source src="https://dl.vgmdownloads.com/soundtracks/torero.mp3" type="audio/mp3">
