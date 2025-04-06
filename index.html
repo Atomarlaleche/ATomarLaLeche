@@ -6,26 +6,27 @@
   <title>A TOMAR LA LECHE</title>
   <style>
     body {
-      background-color: #0a0a0a;
-      color: #00ffcc;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
       font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      padding-top: 10vh;
+    }
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://media.tenor.com/7jxT3AjG-TcAAAAC/alistar-league-of-legends.gif') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
     }
     h1 {
-      font-size: 2.5rem;
-    }
-    .dance {
-      max-width: 400px;
-      margin-top: 30px;
-      animation: shake 1s infinite;
-    }
-    @keyframes shake {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(5deg); }
-      50% { transform: rotate(-5deg); }
-      75% { transform: rotate(5deg); }
-      100% { transform: rotate(0deg); }
+      color: #ffffff;
+      text-shadow: 0 0 15px #00ffcc;
+      font-size: 4rem;
+      text-align: center;
+      margin-top: 35vh;
     }
     audio {
       display: none;
@@ -33,8 +34,8 @@
   </style>
 </head>
 <body>
-  <h1>¡A TOMAR LA LECHE!<br>Te acaba de gappear el verdadero OTP Alistar</h1>
-  <img src="https://media.tenor.com/7jxT3AjG-TcAAAAC/alistar-league-of-legends.gif" alt="Alistar bailando" class="dance">
+  <div class="bg"></div>
+  <h1>¡A TOMAR LA LECHE!</h1>
   <audio id="bgm" autoplay loop>
     <source src="https://dl.vgmdownloads.com/soundtracks/torero.mp3" type="audio/mp3">
     Tu navegador no soporta audio HTML5.
@@ -42,7 +43,7 @@
   <script>
     window.onload = () => {
       const audio = document.getElementById('bgm');
-      audio.volume = 0.4;
+      audio.volume = 0.5;
     }
   </script>
 </body>
